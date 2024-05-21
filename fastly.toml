@@ -1,0 +1,12 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = ["komuro@fastly.com"]
+description = ""
+language = "other"
+manifest_version = 3
+name = "compute-app"
+service_id = ""
+
+[scripts]
+build = "dotnet publish -c Release ComputeApp && cp ./ComputeApp/bin/Release/net8.0/wasi-wasm/AppBundle/ComputeApp.wasm ./bin/main.wasm"
